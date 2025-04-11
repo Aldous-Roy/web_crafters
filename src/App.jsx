@@ -7,6 +7,7 @@ import Events from './components/Events';
 import Footer from './components/Footer';
 import JoinUs from './components/JoinUs';
 import EventsPage from './components/EventsPage';
+import ProjectsPage from './components/ProjectsPage';
 
 const theme = createTheme({
   palette: {
@@ -61,6 +62,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/join" element={<JoinUs />} />
           <Route path="/events" element={<EventsPage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
         </Routes>
         <Footer />
       </ThemeProvider>
