@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
-import { Box, Container, Grid, Typography, Link, IconButton, TextField, Button } from '@mui/material';
+import { Box, Container, Grid, Typography, Link as MuiLink, IconButton, TextField, Button } from '@mui/material';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { Link } from 'react-router-dom';
 import logo from "../assets/logo.svg"
 
 const Footer = () => {
@@ -48,6 +49,8 @@ const Footer = () => {
             Be part of a vibrant network of innovators and thinkers. Sign up today to connect, learn, and grow with us!
           </Typography>
           <Button
+            component={Link}
+            to="/join"
             variant="contained"
             sx={{
               backgroundColor: '#f0a500',
@@ -120,7 +123,7 @@ const Footer = () => {
             </Typography>
             <Box display="flex" flexDirection="column">
               {['Home', 'Join', 'Events', 'Projects', 'About Us'].map((item) => (
-                <Link 
+                <MuiLink 
                   key={item}
                   href="#" 
                   color="inherit" 
@@ -136,7 +139,7 @@ const Footer = () => {
                   }}
                 >
                   {item}
-                </Link>
+                </MuiLink>
               ))}
             </Box>
           </Grid>
@@ -146,7 +149,7 @@ const Footer = () => {
             </Typography>
             <Box display="flex" flexDirection="column">
               {['IEEE SAIRAM', 'SAIRAM ACTIVITIES'].map((item) => (
-                <Link 
+                <MuiLink 
                   key={item}
                   href="#" 
                   color="inherit" 
@@ -162,7 +165,7 @@ const Footer = () => {
                   }}
                 >
                   {item}
-                </Link>
+                </MuiLink>
               ))}
             </Box>
           </Grid>
@@ -194,7 +197,7 @@ const Footer = () => {
           </Box>
           <Box display="flex" justifyContent="center" mt={2}>
             {['Privacy', 'Terms'].map((item) => (
-              <Link 
+              <MuiLink 
                 key={item}
                 href="#" 
                 color="inherit" 
@@ -207,7 +210,7 @@ const Footer = () => {
                 }}
               >
                 {item}
-              </Link>
+              </MuiLink>
             ))}
           </Box>
         </Box>
