@@ -101,7 +101,7 @@ const ProjectsPage = () => {
             Projects Gallery
           </Typography>
           
-          <Grid container spacing={4} sx={{ mb: 8 }}>
+          <Grid container spacing={4} sx={{ml:15, mb: 8 }}>
             {projects.map((project, index) => (
               <Grid item key={project.id} xs={12} sm={6} md={4}>
                 <motion.div

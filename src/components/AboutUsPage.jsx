@@ -1,6 +1,10 @@
 import React from 'react';
 import { Box, Container, Typography, Grid, Card, CardMedia, CardContent, Button, List, ListItem } from '@mui/material';
 import { motion } from 'framer-motion';
+import CEO from "../assets/CEO.svg"
+import principal from "../assets/principal.svg"
+import boy from "../assets/boy.png"
+import girl from "../assets/girl.png"
 
 const coreValues = [
   {
@@ -33,37 +37,37 @@ const patrons = [
   {
     name: 'Dr. Sai Prakash Leo Muthu',
     role: 'CHIEF CHAIRMAN',
-    image: '/chief-patron-1.jpg',
+    image: CEO
   },
   {
     name: 'Dr. K Palani Kumar',
     role: 'Principal, Sri Sai Ram Institute of Technology',
-    image: '/chief-patron-2.jpg',
+    image: principal
   },
   {
     name: 'Aldous Roy',
     role: 'Stratergist',
-    image: '/patron-1.jpg',
+    image: boy
   },
   {
     name: 'Gaandhimathy',
     role: 'Captain',
-    image: '/patron-2.jpg',
+    image: girl
   },
   {
     name: 'Mridhula',
     role: 'ORGANIZER',
-    image: '/patron-3.jpg',
+    image: girl
   },
   {
     name: 'Ruthi Shankari',
     role: 'Propagator',
-    image: '/patron-4.jpg',
+    image: girl
   },
   {
     name: 'Krithika S',
     role: 'Executor',
-    image: '/patron-5.jpg',
+    image: girl
   },
 ];
 
@@ -78,9 +82,9 @@ const AboutUsPage = () => {
           transition={{ duration: 0.4 }}
         >
           <Box sx={{ mb: 8, textAlign: 'center' }}>
-            <Typography 
-              variant="h2" 
-              component="h1" 
+            <Typography
+              variant="h2"
+              component="h1"
               sx={{ mb: 4, fontWeight: 'bold', color: '#333' }}
             >
               Mission Statement
@@ -98,14 +102,14 @@ const AboutUsPage = () => {
           transition={{ duration: 0.4, delay: 0.2 }}
         >
           <Box sx={{ mb: 8, textAlign: 'center' }}>
-            <Typography 
-              variant="h3" 
-              component="h2" 
+            <Typography
+              variant="h3"
+              component="h2"
               sx={{ mb: 4, fontWeight: 'bold', color: '#333' }}
             >
               Vision and Values of IEEE GRSS?
             </Typography>
-            
+
             <Typography variant="h4" component="h3" sx={{ mb: 3, color: '#444' }}>
               Vision Statement
             </Typography>
@@ -126,8 +130,8 @@ const AboutUsPage = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                   >
-                    <Card 
-                      sx={{ 
+                    <Card
+                      sx={{
                         mb: 2,
                         textAlign: 'left',
                         transition: 'transform 0.3s ease',
@@ -149,7 +153,7 @@ const AboutUsPage = () => {
                   </motion.div>
                 ))}
               </Box>
-              
+
               {/* Right Column */}
               <Box sx={{ flex: 1 }}>
                 {coreValues.slice(3, 6).map((value, index) => (
@@ -159,8 +163,8 @@ const AboutUsPage = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                   >
-                    <Card 
-                      sx={{ 
+                    <Card
+                      sx={{
                         mb: 2,
                         textAlign: 'left',
                         transition: 'transform 0.3s ease',
@@ -193,9 +197,9 @@ const AboutUsPage = () => {
           transition={{ duration: 0.4, delay: 0.4 }}
         >
           <Box sx={{ textAlign: 'center' }}>
-            <Typography 
-              variant="h3" 
-              component="h2" 
+            <Typography
+              variant="h3"
+              component="h2"
               sx={{ mb: 6, fontWeight: 'bold', color: '#333' }}
             >
               CHIEF PATRONS
@@ -208,8 +212,8 @@ const AboutUsPage = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                   >
-                    <Card 
-                      sx={{ 
+                    <Card
+                      sx={{
                         height: '100%',
                         textAlign: 'center',
                         transition: 'transform 0.3s ease',
@@ -224,7 +228,7 @@ const AboutUsPage = () => {
                         height="200"
                         image={patron.image}
                         alt={patron.name}
-                        sx={{ 
+                        sx={{
                           objectFit: 'cover',
                           borderRadius: '50%',
                           width: '200px',
@@ -239,7 +243,7 @@ const AboutUsPage = () => {
                         <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
                           {patron.role}
                         </Typography>
-                        <Button 
+                        <Button
                           variant="outlined"
                           sx={{
                             borderColor: '#f0a500',
@@ -265,4 +269,4 @@ const AboutUsPage = () => {
   );
 };
 
-export default AboutUsPage; 
+export default AboutUsPage;
