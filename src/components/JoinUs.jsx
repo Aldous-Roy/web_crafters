@@ -59,31 +59,6 @@ const JoinUs = () => {
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.4, delay: 0.2 }}
                             >
-                                <Box
-                                    sx={{
-                                        position: 'relative',
-                                        height: { xs: '300px', md: '400px' },
-                                        width: '100%',
-                                        overflow: 'hidden',
-                                        borderRadius: '16px',
-                                        boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
-                                    }}
-                                >
-                                    <Box
-                                        component="img"
-                                        src="/placeholder-students.jpg"
-                                        alt="Students collaborating"
-                                        sx={{
-                                            width: '100%',
-                                            height: '100%',
-                                            objectFit: 'cover',
-                                            transition: 'transform 0.3s ease-in-out',
-                                            '&:hover': {
-                                                transform: 'scale(1.05)',
-                                            },
-                                        }}
-                                    />
-                                </Box>
                             </motion.div>
                         </Grid>
                     </Grid>
