@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, Button, IconButton, Drawer, List, ListItem, ListItemText, Box } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link, useLocation } from 'react-router-dom';
-
+import logo from "../assets/logo.svg"
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
@@ -43,7 +43,7 @@ const Navbar = () => {
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
           <Link to="/" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center' }}>
-            <img src="/grss-logo.png" alt="IEEE GRSS Logo" style={{ height: '40px', marginRight: '10px' }} />
+            <img src={logo} alt="IEEE GRSS Logo" style={{ height: '40px', marginRight: '10px' }} />
             <span style={{ fontSize: '1.2rem' }}>IEEE GRSS Student Chapter</span>
           </Link>
         </Typography>
