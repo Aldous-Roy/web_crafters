@@ -3,6 +3,7 @@ import { Box, Container, Grid, Typography, Link, IconButton, TextField, Button }
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import logo from "../assets/logo.svg"
 
 const Footer = () => {
   useEffect(() => {
@@ -65,7 +66,7 @@ const Footer = () => {
 
         <Box textAlign="center" mb={4} className="reveal">
           <img 
-            src="/grss-logo.png" 
+            src={logo}
             alt="IEEE GRSS Logo" 
             style={{ 
               height: '50px',
