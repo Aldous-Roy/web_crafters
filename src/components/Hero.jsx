@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { Box, Typography, Button, Container } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
+    const navigate = useNavigate();
   useEffect(() => {
     // Add fade-in animation to hero content
     const heroContent = document.querySelector('.hero-content');
@@ -83,6 +85,7 @@ const Hero = () => {
             Empowering students through research, collaboration, and innovation.
           </Typography>
           <Button
+              onClick={() => navigate('/join')}
             variant="contained"
             size="large"
             sx={{
