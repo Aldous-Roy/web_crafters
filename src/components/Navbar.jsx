@@ -1,22 +1,37 @@
 import React, { useState } from 'react';
 import { AppBar, Toolbar, Typography, Button, IconButton, Drawer, List, ListItem, ListItemText, Box } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
-  const menuItems = ['Home', 'Join', 'Events', 'Projects', 'About Us'];
+  const menuItems = [
+    { text: 'Home', path: '/' },
+    { text: 'Join', path: '/join' },
+    { text: 'Events', path: '/#events' },
+    { text: 'Projects', path: '/#projects' },
+    { text: 'About Us', path: '/#about' },
+  ];
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <List>
         {menuItems.map((item) => (
-          <ListItem key={item} component="a" href={`#${item.toLowerCase().replace(' ', '-')}`}>
-            <ListItemText primary={item} />
+          <ListItem 
+            key={item.text} 
+            component={Link} 
+            to={item.path}
+            sx={{
+              color: location.pathname === item.path ? '#f0a500' : 'inherit',
+            }}
+          >
+            <ListItemText primary={item.text} />
           </ListItem>
         ))}
       </List>
@@ -24,32 +39,37 @@ const Navbar = () => {
   );
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: 'white', color: 'black', boxShadow: 'none' }}>
+    <AppBar position="sticky" sx={{ backgroundColor: 'white', color: 'black', boxShadow: 'none' }}>
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
-          <img src="/grss-logo.png" alt="IEEE GRSS Logo" style={{ height: '40px', marginRight: '10px' }} />
-          <span style={{ fontSize: '1.2rem' }}>IEEE GRSS Student Chapter</span>
+          <Link to="/" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center' }}>
+            <img src="/grss-logo.png" alt="IEEE GRSS Logo" style={{ height: '40px', marginRight: '10px' }} />
+            <span style={{ fontSize: '1.2rem' }}>IEEE GRSS Student Chapter</span>
+          </Link>
         </Typography>
         
         {/* Desktop Menu */}
         <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
           {menuItems.map((item) => (
             <Button 
-              key={item} 
+              key={item.text} 
+              component={Link}
+              to={item.path}
               sx={{ 
-                color: 'black',
+                color: location.pathname === item.path ? '#f0a500' : 'black',
                 mx: 1,
                 '&:hover': {
                   backgroundColor: 'transparent',
                   color: '#f0a500'
                 }
               }} 
-              href={`#${item.toLowerCase().replace(' ', '-')}`}
             >
-              {item}
+              {item.text}
             </Button>
           ))}
           <Button
+            component={Link}
+            to="/join"
             variant="contained"
             sx={{
               ml: 2,

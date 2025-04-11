@@ -1,9 +1,11 @@
 import React from 'react';
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Events from './components/Events';
 import Footer from './components/Footer';
+import JoinUs from './components/JoinUs';
 
 const theme = createTheme({
   palette: {
@@ -41,15 +43,26 @@ const theme = createTheme({
   },
 });
 
+const HomePage = () => (
+  <>
+    <Hero />
+    <Events />
+  </>
+);
+
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Navbar />
-      <Hero />
-      <Events />
-      <Footer />
-    </ThemeProvider>
+    <Router>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/join" element={<JoinUs />} />
+        </Routes>
+        <Footer />
+      </ThemeProvider>
+    </Router>
   );
 }
 
