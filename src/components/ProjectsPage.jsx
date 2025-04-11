@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Container, Typography, Grid, Card, CardMedia, CardContent, Button } from '@mui/material';
+import { motion } from 'framer-motion';
 
 const projects = [
   {
@@ -90,133 +91,149 @@ const ProjectsPage = () => {
     <Box sx={{ py: 8, backgroundColor: '#fff' }}>
       <Container maxWidth="lg">
         {/* Projects Gallery Section */}
-        <Typography 
-          variant="h2" 
-          component="h1" 
-          align="center" 
-          sx={{ 
-            mb: 6,
-            fontWeight: 'bold',
-            color: '#333',
-          }}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
         >
-          Projects Gallery
-        </Typography>
-        
-        <Grid container spacing={4} sx={{ mb: 8 }}>
-          {projects.map((project) => (
-            <Grid item key={project.id} xs={12} sm={6} md={4}>
-              <Card 
-                sx={{ 
-                  height: '100%',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  transition: 'transform 0.3s ease',
-                  '&:hover': {
-                    transform: 'translateY(-8px)',
-                    boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
-                  },
-                }}
-              >
-                <CardMedia
-                  component="img"
-                  height="200"
-                  image={project.image}
-                  alt={project.title}
-                  sx={{ objectFit: 'cover' }}
-                />
-                <CardContent sx={{ flexGrow: 1, p: 3 }}>
-                  <Typography gutterBottom variant="h6" component="h2" sx={{ fontWeight: 'bold' }}>
-                    {project.title}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-                    {project.description}
-                  </Typography>
-                  <Button 
-                    variant="outlined" 
-                    fullWidth
-                    sx={{
-                      borderColor: '#f0a500',
-                      color: '#f0a500',
+          <Typography 
+            variant="h2" 
+            component="h1" 
+            align="center" 
+            sx={{ mb: 6, fontWeight: 'bold', color: '#333' }}
+          >
+            Projects Gallery
+          </Typography>
+          
+          <Grid container spacing={4} sx={{ mb: 8 }}>
+            {projects.map((project, index) => (
+              <Grid item key={project.id} xs={12} sm={6} md={4}>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                >
+                  <Card 
+                    sx={{ 
+                      height: '100%',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      transition: 'transform 0.3s ease',
                       '&:hover': {
-                        borderColor: '#d89400',
-                        backgroundColor: 'rgba(240, 165, 0, 0.1)',
+                        transform: 'translateY(-8px)',
+                        boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
                       },
                     }}
                   >
-                    Learn More
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
+                    <CardMedia
+                      component="img"
+                      height="200"
+                      image={project.image}
+                      alt={project.title}
+                      sx={{ objectFit: 'cover' }}
+                    />
+                    <CardContent sx={{ flexGrow: 1, p: 3 }}>
+                      <Typography gutterBottom variant="h6" component="h2" sx={{ fontWeight: 'bold' }}>
+                        {project.title}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                        {project.description}
+                      </Typography>
+                      <Button 
+                        variant="outlined" 
+                        fullWidth
+                        sx={{
+                          borderColor: '#f0a500',
+                          color: '#f0a500',
+                          '&:hover': {
+                            borderColor: '#d89400',
+                            backgroundColor: 'rgba(240, 165, 0, 0.1)',
+                          },
+                        }}
+                      >
+                        Learn More
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              </Grid>
+            ))}
+          </Grid>
+        </motion.div>
 
         {/* Featured Projects Section */}
-        <Typography 
-          variant="h3" 
-          component="h2" 
-          align="center" 
-          sx={{ 
-            mb: 6,
-            fontWeight: 'bold',
-            color: '#333',
-          }}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.3 }}
         >
-          Featured Projects
-        </Typography>
-        
-        <Grid container spacing={4} sx={{ mb: 8 }}>
-          {featuredProjects.map((project) => (
-            <Grid item key={project.id} xs={12} md={4}>
-              <Card 
-                sx={{ 
-                  height: '100%',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  transition: 'transform 0.3s ease',
-                  '&:hover': {
-                    transform: 'translateY(-8px)',
-                    boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
-                  },
-                }}
-              >
-                <CardMedia
-                  component="img"
-                  height="250"
-                  image={project.image}
-                  alt={project.title}
-                  sx={{ objectFit: 'cover' }}
-                />
-                <CardContent sx={{ flexGrow: 1, p: 3 }}>
-                  <Typography gutterBottom variant="h5" component="h3" sx={{ fontWeight: 'bold' }}>
-                    {project.title}
-                  </Typography>
-                  <Typography variant="body1" color="text.secondary" sx={{ mb: 1 }}>
-                    {project.description}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-                    {project.subtitle}
-                  </Typography>
-                  <Button 
-                    variant="outlined" 
-                    fullWidth
-                    sx={{
-                      borderColor: '#f0a500',
-                      color: '#f0a500',
+          <Typography 
+            variant="h3" 
+            component="h2" 
+            align="center" 
+            sx={{ mb: 6, fontWeight: 'bold', color: '#333' }}
+          >
+            Featured Projects
+          </Typography>
+          
+          <Grid container spacing={4} sx={{ mb: 8 }}>
+            {featuredProjects.map((project, index) => (
+              <Grid item key={project.id} xs={12} md={4}>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                >
+                  <Card 
+                    sx={{ 
+                      height: '100%',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      transition: 'transform 0.3s ease',
                       '&:hover': {
-                        borderColor: '#d89400',
-                        backgroundColor: 'rgba(240, 165, 0, 0.1)',
+                        transform: 'translateY(-8px)',
+                        boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
                       },
                     }}
                   >
-                    {project.buttonText}
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
+                    <CardMedia
+                      component="img"
+                      height="250"
+                      image={project.image}
+                      alt={project.title}
+                      sx={{ objectFit: 'cover' }}
+                    />
+                    <CardContent sx={{ flexGrow: 1, p: 3 }}>
+                      <Typography gutterBottom variant="h5" component="h3" sx={{ fontWeight: 'bold' }}>
+                        {project.title}
+                      </Typography>
+                      <Typography variant="body1" color="text.secondary" sx={{ mb: 1 }}>
+                        {project.description}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                        {project.subtitle}
+                      </Typography>
+                      <Button 
+                        variant="outlined" 
+                        fullWidth
+                        sx={{
+                          borderColor: '#f0a500',
+                          color: '#f0a500',
+                          '&:hover': {
+                            borderColor: '#d89400',
+                            backgroundColor: 'rgba(240, 165, 0, 0.1)',
+                          },
+                        }}
+                      >
+                        {project.buttonText}
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              </Grid>
+            ))}
+          </Grid>
+        </motion.div>
       </Container>
     </Box>
   );
