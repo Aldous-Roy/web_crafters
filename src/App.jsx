@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import Events from './components/Events';
 import Footer from './components/Footer';
 import JoinUs from './components/JoinUs';
+import EventsPage from './components/EventsPage';
 
 const theme = createTheme({
   palette: {
@@ -59,6 +60,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/join" element={<JoinUs />} />
+          <Route path="/events" element={<EventsPage />} />
         </Routes>
         <Footer />
       </ThemeProvider>
