@@ -1,61 +1,65 @@
 import React from 'react';
 import { Box, Container, Typography, Grid, Card, CardMedia, CardContent, Button } from '@mui/material';
 import { motion } from 'framer-motion';
+import deforestation from "../assets/deforestation.svg"
+import urbanHeat from "../assets/urban heat.svg"
+import flood from "../assets/flood.svg"
+import climate from "../assets/climate monitoring.svg"
+import soilErosion from "../assets/soilerosion.svg"
+import renewableEnergy from "../assets/energy.svg"
+import biodiversity from "../assets/biodiversity.svg"
+import waterQuality from "../assets/water.svg"
+import greenheaven from "../assets/Image 20@2x.svg"
+import urban from "../assets/urban.svg"
 
 const projects = [
   {
     id: 1,
     title: 'Deforestation Study',
     description: 'Tracking AI in satellite satellite images',
-    image: '/deforestation-study.jpg',
+    image: deforestation
   },
   {
     id: 2,
     title: 'Urban Heat Mapping',
     description: 'Measuring heat distribution in urban areas',
-    image: '/urban-heat.jpg',
+    image: urbanHeat
   },
   {
     id: 3,
     title: 'Flood Risk Analysis',
     description: 'Analyzing flood zones via geospatial data',
-    image: '/flood-risk.jpg',
+    image: flood
   },
   {
     id: 4,
     title: 'Climate Monitoring',
     description: 'Tracking climate change globally',
-    image: '/climate-monitoring.jpg',
+    image: climate
   },
   {
     id: 5,
     title: 'Soil Erosion Study',
     description: 'Mapping and assessing soil loss trends',
-    image: '/soil-erosion.jpg',
+    image: soilErosion
   },
   {
     id: 6,
     title: 'Renewable Energy Maps',
     description: 'Estimating solar and wind power capacity',
-    image: '/renewable-energy.jpg',
+    image: renewableEnergy
   },
   {
     id: 7,
     title: 'Biodiversity Mapping',
     description: 'Identifying species-rich regions',
-    image: '/biodiversity.jpg',
+    image: biodiversity
   },
   {
     id: 8,
     title: 'Water Quality Study',
     description: 'Monitoring pollutants in water bodies',
-    image: '/water-quality.jpg',
-  },
-  {
-    id: 9,
-    title: 'Air Pollution Maps',
-    description: 'Tracking air quality in city areas',
-    image: '/air-pollution.jpg',
+    image: waterQuality
   },
 ];
 
@@ -65,7 +69,7 @@ const featuredProjects = [
     title: 'Green Haven',
     description: 'Innovative eco-friendly design',
     subtitle: 'Explore sustainable architecture projects',
-    image: '/green-haven.jpg',
+    image: greenheaven,
     buttonText: 'Learn More',
   },
   {
@@ -73,16 +77,8 @@ const featuredProjects = [
     title: 'Urban Oasis',
     description: 'Revitalized urban spaces',
     subtitle: 'Discover community-focused designs',
-    image: '/urban-oasis.jpg',
+    image: urban,
     buttonText: 'Explore',
-  },
-  {
-    id: 3,
-    title: 'River Arc',
-    description: 'Engineering marvels in infrastructure',
-    subtitle: 'One plus groundbreaking projects',
-    image: '/river-arc.jpg',
-    buttonText: 'View',
   },
 ];
 
