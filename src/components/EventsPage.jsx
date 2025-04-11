@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Box, Container, Typography, Card, CardMedia, CardContent, Button, Grid, IconButton } from '@mui/material';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { motion } from 'framer-motion';
 import meetup from '../assets/meetup.svg';
 import AI from '../assets/AI.svg';
 import robotic from '../assets/robotics.svg';
