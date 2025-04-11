@@ -8,6 +8,8 @@ import Footer from './components/Footer';
 import JoinUs from './components/JoinUs';
 import EventsPage from './components/EventsPage';
 import ProjectsPage from './components/ProjectsPage';
+import AboutUsPage from './components/AboutUsPage';
+import ScrollToTop from './components/ScrollToTop';
 
 const theme = createTheme({
   palette: {
@@ -57,12 +59,14 @@ function App() {
     <Router>
       <ThemeProvider theme={theme}>
         <CssBaseline />
+        <ScrollToTop />
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/join" element={<JoinUs />} />
           <Route path="/events" element={<EventsPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/about" element={<AboutUsPage />} />
         </Routes>
         <Footer />
       </ThemeProvider>
