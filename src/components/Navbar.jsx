@@ -16,7 +16,7 @@ const Navbar = () => {
     { text: 'Join', path: '/join' },
     { text: 'Events', path: '/events' },
     { text: 'Projects', path: '/projects' },
-    { text: 'About Us', path: '/#about' },
+    { text: 'About Us', path: '/about' },
   ];
 
   const drawer = (
